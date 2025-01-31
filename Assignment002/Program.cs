@@ -14,22 +14,42 @@
         Saturday = 6,
         Sunday = 7,
     }
+    public struct Information
+    {
+        public int age { get; set; }
+        public string name { get; set; }
+    }
+
+
     internal class Program
     {
-    
+
         static void Main(string[] args)
         {
             #region Part01
             #region Q1
-            int enumLength = Enum.GetValues(typeof(DayWeek)).Length;
-            Dayes Dayes = new Dayes();
-            for (int i = 1; i < enumLength; i++)
+            //int enumLength = Enum.GetValues(typeof(DayWeek)).Length;
+            //Dayes Dayes = new Dayes();
+            //for (int i = 1; i < enumLength; i++)
+            //{
+            //    Dayes.DayWeek = (DayWeek)i;
+            //    Console.WriteLine(Dayes.DayWeek);
+            //}
+            #endregion
+            #region Q2
+            Information Information = new Information();
+            Information[] Collection = new Information[3];
+            Collection[0] = new Information { age = 15, name = "mohamed" };
+            Collection[1] = new Information { age = 15, name = "mohamed" };
+            Collection[2] = new Information { age = 15, name = "mohamed" };
+            for (int i = 0; i < Collection.Length; i++)
             {
-                Dayes.DayWeek = (DayWeek)i;
-                Console.WriteLine(Dayes.DayWeek);
+                Console.WriteLine($"{Collection[i].name} {Collection[i].age}");
             }
+
             #endregion
             #endregion
+
 
         }
     }
