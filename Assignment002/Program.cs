@@ -40,7 +40,27 @@
         Blue,
     }
 
+    public struct Distance
+    {
+        public decimal Point01 { get; set; }
+        public decimal Point02 { get; set; }
 
+        public Distance(decimal _Point01, decimal _Point02)
+        {
+            Point01 = _Point01;
+            Point02 = _Point02;
+        }
+        public override string ToString()  // it summary the struct it control the output
+        {
+            return $"one is  : {Point01}, two is: {Point02} ";
+        }
+
+        public static double CalculateDistance(Distance d1, Distance d2)
+        {
+            return Math.Sqrt(Math.Pow((double)(d2.Point01 - d1.Point01), 2) +
+                             Math.Pow((double)(d2.Point02 - d1.Point02), 2));
+        }
+    }
 
     internal class Program
     {
@@ -122,6 +142,14 @@
                 Console.WriteLine("Basic color");
             else
                 Console.WriteLine("Basic color");
+            #endregion
+            #region Q6
+            Distance distance01 = new(5, 5);
+            Distance distance02 = new(10, 10);
+            Console.WriteLine(distance01);
+            Console.WriteLine(distance02);
+            double result = Distance.CalculateDistance(distance01, distance02);
+            Console.WriteLine($"Distance between {distance01} and {distance02} is: {result}");
             #endregion
             #endregion
 
