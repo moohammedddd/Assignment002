@@ -26,7 +26,17 @@
         Autumn,
         Winter
     }
-
+    public enum Crud : byte
+    {
+        delete = 1,
+        execute = 2,
+        read = 4,
+        write = 8,
+    }
+   
+    
+    
+    
     internal class Program
     {
 
@@ -81,6 +91,21 @@
             {
                 Console.WriteLine("Winter: December to February");
             }
+            #endregion
+            #region Q4
+            Crud operations = Crud.write;
+            //operations = operations ^ Crud.delete;
+
+            bool HaveDelete = operations.HasFlag(Crud.delete);
+            if (HaveDelete)
+                Console.WriteLine("it have operation of delete");
+            else
+                operations = operations ^ Crud.delete;
+            Console.WriteLine("the operation of delete has been added");
+
+            Console.WriteLine(operations);
+            operations = operations | Crud.execute;
+            Console.WriteLine(operations);
             #endregion
             #endregion
 
