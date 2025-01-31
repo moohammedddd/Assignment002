@@ -33,10 +33,15 @@
         read = 4,
         write = 8,
     }
-   
-    
-    
-    
+    public enum Color
+    {
+        Read,
+        Green,
+        Blue,
+    }
+
+
+
     internal class Program
     {
 
@@ -93,19 +98,30 @@
             }
             #endregion
             #region Q4
-            Crud operations = Crud.write;
-            //operations = operations ^ Crud.delete;
+            //Crud operations = Crud.write;
+            ////operations = operations ^ Crud.delete;
 
-            bool HaveDelete = operations.HasFlag(Crud.delete);
-            if (HaveDelete)
-                Console.WriteLine("it have operation of delete");
+            //bool HaveDelete = operations.HasFlag(Crud.delete);
+            //if (HaveDelete)
+            //    Console.WriteLine("it have operation of delete");
+            //else
+            //    operations = operations ^ Crud.delete;
+            //Console.WriteLine("the operation of delete has been added");
+
+            //Console.WriteLine(operations);
+            //operations = operations | Crud.execute;
+            //Console.WriteLine(operations);
+            #endregion
+            #region Q5
+            Color Color = Color.Blue;
+
+            Color BasicColor;
+            Console.WriteLine("Enter The Name Of The color ");
+            bool ValiedColor = Enum.TryParse(Console.ReadLine(), out BasicColor);
+            if (ValiedColor)
+                Console.WriteLine("Basic color");
             else
-                operations = operations ^ Crud.delete;
-            Console.WriteLine("the operation of delete has been added");
-
-            Console.WriteLine(operations);
-            operations = operations | Crud.execute;
-            Console.WriteLine(operations);
+                Console.WriteLine("Basic color");
             #endregion
             #endregion
 
