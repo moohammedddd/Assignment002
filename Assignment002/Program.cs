@@ -260,9 +260,22 @@ namespace Assignment002
 
             #region Part02
             #region Q1,2,3,4,5,
-            HiringDate hiringDate = new HiringDate(20, 5, 2005);
-            Employee emp = new Employee(1, "mohamed", 30, Security.DBA, 15, hiringDate, Gender.male);
-            Console.WriteLine(emp);
+            //HiringDate hiringDate = new HiringDate(20, 5, 2005);
+            //Employee emp = new Employee(1, "mohamed", 30, Security.DBA, 15, hiringDate, Gender.male);
+            //Console.WriteLine(emp);
+            #endregion
+            #region Q6
+            Employee[] EmpArr = new Employee[3]
+        {
+            new Employee(1, "Alice", 28, Security.DBA, 5000, new HiringDate(15, 3, 2010), Gender.female),
+            new Employee(2, "Bob", 32, Security.Guest, 2000, new HiringDate(7, 7, 2015), Gender.male),
+            new Employee(3, "Charlie", 40, Security.Developer, 7000, new HiringDate(20, 1, 2008), Gender.male)
+        };
+
+            foreach (var employee in EmpArr)
+            {
+                Console.WriteLine(employee);
+            }
             #endregion
             #endregion
 
