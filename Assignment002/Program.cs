@@ -19,7 +19,13 @@
         public int age { get; set; }
         public string name { get; set; }
     }
-
+    public enum Season
+    {
+        Spring,
+        Summer,
+        Autumn,
+        Winter
+    }
 
     internal class Program
     {
@@ -37,16 +43,44 @@
             //}
             #endregion
             #region Q2
-            Information Information = new Information();
-            Information[] Collection = new Information[3];
-            Collection[0] = new Information { age = 15, name = "mohamed" };
-            Collection[1] = new Information { age = 15, name = "mohamed" };
-            Collection[2] = new Information { age = 15, name = "mohamed" };
-            for (int i = 0; i < Collection.Length; i++)
-            {
-                Console.WriteLine($"{Collection[i].name} {Collection[i].age}");
-            }
+            //Information Information = new Information();
+            //Information[] Collection = new Information[3];
+            //Collection[0] = new Information { age = 15, name = "mohamed" };
+            //Collection[1] = new Information { age = 15, name = "mohamed" };
+            //Collection[2] = new Information { age = 15, name = "mohamed" };
+            //for (int i = 0; i < Collection.Length; i++)
+            //{
+            //    Console.WriteLine($"{Collection[i].name} {Collection[i].age}");
+            //}
 
+            #endregion
+            #region Q3
+            bool valied;
+            Season SeasonUser;
+            do
+            {
+                Console.WriteLine("enter the name of season");
+                valied = Enum.TryParse(Console.ReadLine(), out SeasonUser);
+
+            }
+            while (!valied);
+
+            if (SeasonUser == Season.Spring)
+            {
+                Console.WriteLine("Spring: March to May");
+            }
+            else if (SeasonUser == Season.Summer)
+            {
+                Console.WriteLine("Summer: June to August");
+            }
+            else if (SeasonUser == Season.Autumn)
+            {
+                Console.WriteLine("Autumn: September to November");
+            }
+            else if (SeasonUser == Season.Winter)
+            {
+                Console.WriteLine("Winter: December to February");
+            }
             #endregion
             #endregion
 
