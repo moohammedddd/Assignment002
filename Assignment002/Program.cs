@@ -1,4 +1,6 @@
-﻿namespace Assignment002
+﻿using System.Reflection;
+
+namespace Assignment002
 {
     public class Dayes
     {
@@ -26,6 +28,7 @@
         Autumn,
         Winter
     }
+    [Flags]
     public enum Crud : byte
     {
         delete = 1,
@@ -79,6 +82,62 @@
         }
     }
 
+    public enum Gender
+    {
+        male,
+        female
+    }
+
+    public enum Security
+    {
+        Guest,
+        Developer,
+        Security,
+        DBA,
+    }
+
+    public class HiringDate
+    {
+
+        public int day { get; set; }
+        public int month { get; set; }
+        public int year { get; set; }
+
+        public HiringDate(int _day, int _month, int _year)
+        {
+            day = _day;
+            month = _month;
+            year = _year;
+        }
+    }
+
+    public class Employee
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public int age { get; set; }
+        public Security security { get; set; }
+        public int salary { get; set; }
+        public HiringDate date { get; set; }
+        public Gender gender { get; set; }
+
+
+        public Employee(int _id, string _name, int _age, Security _securityLevel, int _salary, HiringDate _hireDate, Gender _gender)
+        {
+            id = _id;
+            name = _name;
+            age = _age;
+            security = _securityLevel;
+            salary = _salary;
+            date = _hireDate;
+            gender = _gender;
+        }
+        //5
+        public override string ToString()
+        {
+            return $"ID: {id}, Name: {name}, Age: {age}, Security Level: {security}, Salary: {salary}, Hire Date: {date}, Gender: {gender}";
+        }
+    }
 
     internal class Program
     {
@@ -196,6 +255,14 @@
                 }
 
             }
+            #endregion
+            #endregion
+
+            #region Part02
+            #region Q1,2,3,4,5,
+            HiringDate hiringDate = new HiringDate(20, 5, 2005);
+            Employee emp = new Employee(1, "mohamed", 30, Security.DBA, 15, hiringDate, Gender.male);
+            Console.WriteLine(emp);
             #endregion
             #endregion
 
