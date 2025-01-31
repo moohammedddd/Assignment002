@@ -150,6 +150,7 @@
             Console.WriteLine(distance02);
             double result = Distance.CalculateDistance(distance01, distance02);
             Console.WriteLine($"Distance between {distance01} and {distance02} is: {result}");
+            //
 
             #endregion
             #endregion
