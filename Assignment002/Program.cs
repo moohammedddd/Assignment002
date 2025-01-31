@@ -62,6 +62,24 @@
         }
     }
 
+    public struct Person
+    {
+        public string Name { get; set; }
+        public int age { get; set; }
+
+        public Person(string _name, int _age)
+        {
+            Name = _name;
+            age = _age;
+        }
+
+        public override string ToString()  // it summary the struct it control the output
+        {
+            return $"name is : {Name}, age is : {age} ";
+        }
+    }
+
+
     internal class Program
     {
 
@@ -152,6 +170,32 @@
             Console.WriteLine($"Distance between {distance01} and {distance02} is: {result}");
             //
 
+            #endregion
+            #region Q7
+            Person[] people = new Person[3];
+            people[0] = new("Ahmed", 25);
+            people[1] = new("Mohamed", 23);
+            people[2] = new("Mostafa", 18);
+            Console.WriteLine(people[0].age);
+            Console.WriteLine(people[1].age);
+            Console.WriteLine(people[2].age);
+
+            int MaxAge = people[0].age;
+            for (int i = 0; i < people.Length; i++)
+            {
+                if (MaxAge < people[i].age)
+                    MaxAge = people[i].age;
+            }
+            Console.WriteLine($"the max age is {MaxAge}");
+
+            for (int i = 0; i < people.Length; i++)
+            {
+                if (people[i].age == MaxAge)
+                {
+                    Console.WriteLine($"the data of people who have max age : {people[i]}");
+                }
+
+            }
             #endregion
             #endregion
 
